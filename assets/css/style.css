@@ -1,0 +1,131 @@
+:root {
+  --pink-deep: #C9527A;
+  --pink: #E8779E;
+  --pink-soft: #F6C4D5;
+  --pink-bg: #FDF2F6;
+  --gold: #D4AF6A;
+  --gold-soft: #F1E1BE;
+  --ink: #4A2B3D;
+  --gray-soft: #F3E4EB;
+}
+
+body {
+  background: linear-gradient(160deg, #FDF2F6 0%, #FBEAD8 45%, #F6E4CB 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.navbar {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-deep) 100%) !important;
+}
+.navbar .nav-link {
+  color: rgba(255,255,255,.85);
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: #fff;
+  border-bottom: 2px solid var(--gold);
+}
+.navbar-brand { color: #fff !important; }
+
+.card {
+  border: 1px solid var(--gray-soft);
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(201,82,122,.06);
+}
+
+.btn-primary {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: var(--pink-deep);
+  border-color: var(--pink-deep);
+}
+.btn-outline-primary {
+  color: var(--pink-deep);
+  border-color: var(--pink);
+}
+.btn-outline-primary:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+}
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary {
+  background: var(--pink-deep) !important;
+  border-color: var(--pink-deep) !important;
+  color: #fff !important;
+}
+
+.badge-gold { background: var(--gold); color: var(--ink); }
+
+.stat-card {
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
+  background: #fff;
+  border: 1px solid var(--gray-soft);
+}
+.stat-card .stat-num { font-size: 1.7rem; font-weight: 700; color: var(--pink-deep); }
+.stat-card .stat-label { font-size: .85rem; color: #9a6b80; }
+
+.low-stock { background: #FCE7EC !important; }
+.needs-service { background: #FBF0DA !important; }
+
+/* Kasir: kategori & tombol layanan */
+.kategori-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .6rem .9rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fff 0%, var(--pink-bg) 100%);
+  border: 1px solid var(--pink-soft);
+}
+.kategori-header img { width: 44px; height: 44px; }
+.kategori-header .fw-semibold { color: var(--pink-deep); }
+
+.layanan-btn {
+  min-height: 80px;
+  border-radius: 14px;
+  border: 1px solid var(--gray-soft);
+  background: #fff;
+  text-align: left;
+  padding: .7rem .9rem;
+  width: 100%;
+  transition: border-color .15s, background .15s;
+}
+.layanan-btn:active, .layanan-btn.selected {
+  border-color: var(--pink);
+  background: var(--pink-bg);
+}
+
+.qr-box {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  border: 2px dashed var(--gold);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--pink-soft);
+  color: var(--ink);
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--pink-soft);
+}
+
+@media (max-width: 576px) {
+  .stat-card .stat-num { font-size: 1.4rem; }
+  table.table-responsive-font { font-size: .85rem; }
+}
+
+@media print {
+  .navbar, .no-print { display: none !important; }
+}
