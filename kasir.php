@@ -19,6 +19,13 @@ require 'includes/header.php';
 <script src="<?= midtransSnapJsUrl() ?>" data-client-key="<?= MIDTRANS_CLIENT_KEY ?>"></script>
 <?php endif; ?>
 
+<?php if (($_GET['error'] ?? '') === 'stok_kurang'): ?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Transaksi ditolak.</strong> Stok bahan tidak mencukupi untuk layanan yang dipilih. Silakan cek halaman Bahan atau hubungi Owner.
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<?php endif; ?>
+
 <div class="row g-3">
   <div class="col-md-7">
     <h6 class="fw-semibold mb-2">Pilih Layanan</h6>
